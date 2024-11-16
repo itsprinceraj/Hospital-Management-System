@@ -16,12 +16,14 @@ public class Patients {
 
     //     create a function for adding patients;
     void registerPatient() {
+        scanner.nextLine();
         System.out.print("Enter patient name: ");
         String name = scanner.nextLine();
         System.out.print("Enter patient Gender: ");
         String gender = scanner.nextLine();
         System.out.print("Enter patient age: ");
         int age = scanner.nextInt();
+        System.out.println();
         String query = "INSERT INTO patients(name,age, gender) VALUES(?,?,?);";
         try {
             PreparedStatement preState = connect.prepareStatement(query);
@@ -79,4 +81,6 @@ public class Patients {
 
         return false;
     }
+
+
 }
